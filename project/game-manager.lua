@@ -1,7 +1,7 @@
 gameManager = {}
 
 	menu = require("project/menu/menu")
-	-- game = require("game")
+	game = require("project/game/game")
 
 	gameManager.currentState = "none"
 
@@ -15,6 +15,14 @@ gameManager = {}
 				gameManager.currentState = "menu"
 			end
 		end
+		if state == "game" then
+			if gameManager.currentState == "menu" then
+				gameManager.unload("game")
+				gameManager.currentState = "game"
+			else
+				return
+			end
+		end
 		gameManager.load()
 	end
 
@@ -24,7 +32,7 @@ gameManager = {}
 			menu.load()	
 		end
 		if gameManager.currentState == "game" then
-			-- game.load()	
+			game.load()	
 		end
 	end
 	function gameManager.unload(state)
@@ -32,18 +40,31 @@ gameManager = {}
 			menu.unload()
 		end
 		if state == "game" then
-			-- game.unload()
+			game.unload()
 		end
 	end
 
-
 	function gameManager.update(dt)
+		if gameManager.currentState == "game" then
+			game.update(dt)
+		end
 	end
 
 	function gameManager.keypressed(key)
-		menu.keypressed(key)
+		
+		if gameManager.currentState == "menu" then
+			menu.keypressed(key)
+		end
+		if gameManager.currentState == "game" then
+			game.keypressed(key)
+		end
 	end
 
 	function gameManager.draw()
-		menu.draw()
+		if gameManager.currentState == "menu" then
+			menu.draw()
+		end
+		if gameManager.currentState == "game" then
+			game.draw()
+		end
 	end
