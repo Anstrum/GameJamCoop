@@ -1,5 +1,7 @@
 currentDt = 0
 
+require("project/misc/inputs")
+
 screen = {}
 	screen.width = 800
 	screen.height = 600
@@ -78,3 +80,18 @@ colors = {}
 	colors.white = {1, 1, 1, 1}
 	colors.black = {0, 0, 0, 1}
 	colors.log = {0, 1, 0.8}
+
+
+fonts = {}
+	fonts.folder = "project/assets/fonts/"
+	fonts.title = nil
+	fonts.buttonText = nil
+	fonts.text = nil
+	function fonts.init()
+		fonts.title = love.graphics.newFont(fonts.folder.."flower.TTF", 26)
+		fonts.bubbleText = love.graphics.newFont(fonts.folder.."bubbles.TTF", 20)
+		fonts.buttonText = love.graphics.newFont(fonts.folder.."dungeon.ttf", 25)
+		fonts.text = love.graphics.newFont(20)
+		
+		logger.addLog("all fonts initiated", false)
+	end
