@@ -1,5 +1,6 @@
 local menu = {}
 
+	menu.audio = require("project/menu/menu-audio")
 	menu.ui = require("project/menu/menu-ui")
 
 	menu.title = "Undecided Title"
@@ -29,6 +30,7 @@ function menu.load()
 	menu.qwerty = love.graphics.newText(fonts.bubbleText, menu.qwerty)
 	menu.title = love.graphics.newText(fonts.title, menu.title)
 
+	menu.audio.load()
 	menu.ui.load()
 
 	menu.loaded = true
@@ -39,6 +41,7 @@ end
 function menu.unload()
 	-- menu.loaded = false
 	menu.ui.unload()
+	menu.audio.unload()
 	logger.addLog("menu unloaded", false)
 end
 

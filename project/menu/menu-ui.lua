@@ -26,8 +26,10 @@ function UI.keypressed(key)
 	if key == "p" then
 		if inputs.keyboardLayout == "AZERTY" then
 			inputs.keyboardLayout = "QWERTY"
+			menu.audio.play("change-option")
 		else
 			inputs.keyboardLayout = "AZERTY"
+			menu.audio.play("change-option")
 		end
 	end
 
@@ -35,9 +37,11 @@ function UI.keypressed(key)
 
 	if inputs.check(key) == "left" then
 		UI.buttonSelected = "start"
+		menu.audio.play("select")
 	end
 	if inputs.check(key) == "right" then
 		UI.buttonSelected = "quit"
+		menu.audio.play("select")
 	end
 
 		-- UI validation --

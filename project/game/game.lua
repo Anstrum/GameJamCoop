@@ -1,6 +1,6 @@
 local game = {}
 
-game.player = require("project/game/player")
+game.player = require("project/game/player/player")
 
 function game.load()
 	game.player.load()
