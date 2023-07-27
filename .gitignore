@@ -2,4 +2,5 @@ debug.txt
 *.vs
 *.vscode
 .idea/
+love2D/
 build/

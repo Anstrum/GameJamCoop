@@ -20,4 +20,5 @@ copy love2D\*.dll build
 copy love2D\license.txt build
 
 rem add every files of the build folder to an archive named game.zip
-7z a -tzip build\game.zip build\*
+cd build
+7z a -tzip game.zip *
