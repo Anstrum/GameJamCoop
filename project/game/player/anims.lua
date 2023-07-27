@@ -37,7 +37,6 @@ function anims.update(dt)
 		if anims.currentFrame > anims.frameCount then
 			anims.currentFrame = 1
 		end
-		print("frame changed, now: "..anims.currentFrame)
 	end
 end
 

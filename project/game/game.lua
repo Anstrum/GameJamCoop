@@ -2,6 +2,9 @@ local game = {}
 
 game.player = require("project/game/player/player")
 
+tiles = require("project/game/map/levels/tiles")
+
+
 function game.load()
 	game.player.load()
 end
