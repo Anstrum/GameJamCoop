@@ -43,9 +43,6 @@ end
 
 
 function anims.draw()
-	local dayWalk = love.graphics.newImage("project/assets/player/player_day_walk.png")
-	love.graphics.draw(dayWalk, anims.dayWalk[anims.currentFrame], 10, 10, 0, 3, 3)
-	love.graphics.draw(dayWalk, anims.dayWalk[anims.currentFrame], 100, 10, 0, 3.5, 3.5)
 end
 
 
